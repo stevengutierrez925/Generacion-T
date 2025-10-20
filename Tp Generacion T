@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mi Página Web Básica</title>
+</head>
+<body>
+    <h1>Mi primer pagina web, sean bienvenidos</h1>
+
+    <p>Cree esta página con HTML siguiendo la clase 02.</p>
+
+    <p><strong>HTML</strong> significa <em>HyperText Markup Language</em> y se usa para estructurar contenido en la web.</p>
+
+<img src="generaciont.JPEG" alt="Logo de Generación T" width="300" />
+
+    <p>Para más información, visita 
+        <a href="https://generaciont.org" target="_blank" title="Sitio de Generación T">
+            Generación T
+        </a>.
+    </p>
+</body>
+</html>
