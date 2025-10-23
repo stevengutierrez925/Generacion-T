@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de propiedades CSS</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 20px;">
+
+    <h1 style="color: #2b5797; text-align: center; text-shadow: 2px 2px 4px #aaa;">mi página con CSS</h1>
+
+    <p style="color: #333; font-size: 18px; line-height: 1.6; text-align: justify;">
+        
+    </p>
+
+    <div style="background-color: white; border: 2px solid #2b5797; border-radius: 12px; padding: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.2); width: 60%; margin: 20px auto;">
+        <h2 style="color: #2b5797; text-decoration: underline;">Propiedades usadas:</h2>
+        <ul style="list-style-type: square; padding-left: 20px;">
+            <li>color</li>
+            <li>background-color</li>
+            <li>font-family</li>
+            <li>border</li>
+            <li>border-radius</li>
+            <li>box-shadow</li>
+            <li>text-shadow</li>
+            <li>text-align</li>
+            <li>width</li>
+        </ul>
+    </div>
+
+    <button style="background-color: #2b5797; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+        Haz clic aquí
+    </button>
+
+    <p style="margin-top: 30px; text-align: center; font-style: italic; color: #777;">
+  
+    </p>
+
+</body>
+</html>
