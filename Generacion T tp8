@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Nº 8 - Pseudo-elementos y Animaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Trabajo Práctico Nº 8 - Pseudo-elementos y Animaciones</h1>
+    <p><strong>Docente:</strong> Lucio Petrucci</p>
+    <p><strong>Fecha de entrega:</strong> [Completar]</p>
+
+    <section id="ej1">
+        <h2>Ejercicio 1: Caja Decorativa Animada</h2>
+        <div class="caja-animada"></div>
+        <p class="comentario">
+
+        </p>
+    </section>
+
+    <section id="ej2">
+        <h2>Ejercicio 2: Botón con Efecto de Brillo</h2>
+        <button class="boton-brillo">Haz clic aquí</button>
+        <p class="comentario">
+
+        </p>
+    </section>
+
+    <section id="ej3">
+        <h2>Ejercicio 3: Mensaje Emergente Animado</h2>
+        <p class="mensaje">Mensaje informativo importante</p>
+        <p class="comentario">
+        </p>
+    </section>
+
+    <section id="ej4">
+        <h2>Ejercicio 4: Tarjeta Informativa Interactiva</h2>
+        <div class="tarjeta">
+            <h3>Título de la tarjeta</h3>
+            <p>Esta es una tarjeta informativa con un distintivo animado.</p>
+        </div>
+        <p class="comentario">
+        </p>
+    </section>
+
+</body>
+</html>
+
+style.css:
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #2b5797;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.caja-animada {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #d9e1f2;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.caja-animada::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 12px;
+    border: 4px solid #2b5797;
+    animation: cambioColor 3s infinite alternate;
+}
+
+@keyframes cambioColor {
+    0% { border-color: #2b5797; }
+    50% { border-color: #f39c12; }
+    100% { border-color: #1e3e6e; }
+}
+
+.boton-brillo {
+    position: relative;
+    padding: 15px 30px;
+    background-color: #2b5797;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.boton-brillo::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: skewX(-20deg);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.boton-brillo:hover::after {
+    animation: brillo 0.8s linear;
+}
+
+@keyframes brillo {
+    0% { left: -75%; opacity: 1; }
+    100% { left: 125%; opacity: 0; }
+}
+
+.mensaje {
+    position: relative;
+    display: inline-block;
+    background-color: #eaf0fa;
+    padding: 15px 20px;
+    border-radius: 6px;
+    color: #2b5797;
+    font-weight: bold;
+}
+
+.mensaje::after {
+    content: " ✦ Nuevo";
+    position: absolute;
+    top: -25px;
+    right: 0;
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    animation: aparecer 3s ease-in-out infinite alternate;
+}
+
+@keyframes aparecer {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta {
+    position: relative;
+    background-color: #d9e1f2;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tarjeta::before {
+    content: "INFO";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    background-color: #2b5797;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    transform-origin: center;
+    animation: rotar 3s linear infinite;
+}
+
+@keyframes rotar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.comentario {
+    margin-top: 15px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #2b5797;
+    color: #444;
+}
