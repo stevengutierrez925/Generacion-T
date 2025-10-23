@@ -75,7 +75,6 @@ INDEX.HTML:
 
 
 style.css
-/* fuente global */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
