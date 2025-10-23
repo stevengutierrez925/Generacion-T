@@ -1,0 +1,196 @@
+index.html:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Nº 7 - CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Trabajo Práctico Nº 7 - CSS Grid</h1>
+    <p><strong>Docente:</strong> Lucio Petrucci</p>
+    <p><strong>Fecha de entrega:</strong> [Completar]</p>
+
+    <section id="ej1">
+        <h2>Ejercicio 1: Contenedor Grid Básico</h2>
+        <div class="grid-basico">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+        </div>
+        <p class="comentario">
+       
+        </p>
+    </section>
+
+    <section id="ej2">
+        <h2>Ejercicio 2: Áreas de Grid</h2>
+        <div class="grid-areas">
+            <header>Cabecera</header>
+            <aside>Barra lateral</aside>
+            <main>Contenido principal</main>
+            <footer>Pie de página</footer>
+        </div>
+        <p class="comentario">
+      
+        </p>
+    </section>
+
+    <section id="ej3">
+        <h2>Ejercicio 3: Espaciado y Alineación</h2>
+        <div class="grid-alineacion">
+            <div class="item especial">Elemento centrado</div>
+            <div class="item">Elemento 2</div>
+            <div class="item">Elemento 3</div>
+            <div class="item">Elemento 4</div>
+        </div>
+        <p class="comentario">
+          
+        </p>
+    </section>
+
+    <section id="ej4">
+        <h2>Ejercicio 4: Ubicación Avanzada con Líneas</h2>
+        <div class="grid-lineas">
+            <div class="item">A</div>
+            <div class="item">B</div>
+            <div class="item grande">C (ocupa dos columnas y una fila)</div>
+            <div class="item">D</div>
+        </div>
+        <p class="comentario">
+        </p>
+    </section>
+
+</body>
+</html>
+
+style.css:
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #2b5797;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.item {
+    background-color: #2b5797;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.grid-basico {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 150px;
+    gap: 10px;
+    background-color: #d9e1f2;
+}
+
+.grid-areas {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 300px auto;
+    gap: 10px;
+    background-color: #eaf0fa;
+    padding: 10px;
+}
+
+.grid-areas header {
+    grid-area: header;
+    background-color: #2b5797;
+    color: white;
+    padding: 20px;
+}
+
+.grid-areas aside {
+    grid-area: sidebar;
+    background-color: #d9e1f2;
+    padding: 20px;
+}
+
+.grid-areas main {
+    grid-area: main;
+    background-color: #fefefe;
+    padding: 20px;
+}
+
+.grid-areas footer {
+    grid-area: footer;
+    background-color: #1e3e6e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.grid-alineacion {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    background-color: #d9e1f2;
+}
+
+.grid-alineacion .especial {
+    justify-self: end;
+    align-self: start;
+    background-color: #f39c12;
+}
+
+.grid-lineas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 10px;
+    background-color: #d9e1f2;
+}
+
+.grid-lineas .grande {
+    grid-column: span 2; /* ocupa dos columnas */
+    grid-row: span 1;    /* ocupa una fila */
+    background-color: #f39c12;
+}
+
+.comentario {
+    margin-top: 15px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-left: 4px solid #2b5797;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .grid-areas {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .grid-lineas {
+        grid-template-columns: 1fr 1fr;
+    }
+}
