@@ -1,0 +1,148 @@
+INDEX.HTML:
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Práctico Nº 9 - Formularios HTML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Trabajo Práctico Nº 9 - Formularios HTML</h1>
+    <p><strong>Docente:</strong> Lucio Petrucci</p>
+    <p><strong>Fecha de entrega:</strong> [Completar]</p>
+
+    <section>
+        <h2>Formulario para Prestadores de Servicios</h2>
+
+        <form action="https://formspree.io/f/tu-endpoint" method="POST">
+            
+            <fieldset>
+                <legend>Datos Personales</legend>
+
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Ej: Juan Pérez">
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Ej: juan@example.com">
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ej: 1123456789">
+            </fieldset>
+
+            <fieldset>
+                <legend>Información Profesional</legend>
+
+                <label for="servicio">Tipo de servicio:</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="electricista">Electricista</option>
+                    <option value="plomero">Plomero</option>
+                    <option value="jardinero">Jardinero</option>
+                    <option value="pintor">Pintor</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="experiencia">Años de experiencia:</label>
+                <input type="number" id="experiencia" name="experiencia" min="0" max="50" placeholder="Ej: 5">
+
+                <label for="cv">Adjuntar CV (opcional):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+            </fieldset>
+
+            <fieldset>
+                <legend>Mensaje adicional</legend>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            </fieldset>
+
+            <button type="submit">Enviar formulario</button>
+        </form>
+    </section>
+
+</body>
+</html>
+
+
+STYLE.CSS:
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 30px;
+    color: #333;
+}
+
+h1, h2 {
+    color: #2b5797;
+}
+
+section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    border: 2px solid #2b5797;
+    border-radius: 6px;
+    padding: 15px 20px;
+}
+
+legend {
+    color: #2b5797;
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #2b5797;
+    outline: none;
+    box-shadow: 0 0 5px rgba(43, 87, 151, 0.4);
+}
+
+button {
+    background-color: #2b5797;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e3e6e;
+}
+
+input:invalid {
+    border-color: #e74c3c;
+}
